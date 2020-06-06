@@ -64,8 +64,8 @@ inquirer.prompt([{
     }
 
     const readMeString = `
-    Title: ${answer.Title}
-    Description: ${answer.Description}
+    # Title: ${answer.Title}
+    # Description: ${answer.Description}
     Table of Contents: ${answer.Contents}
     Installation: ${answer.Installation}
     Usage: ${answer.Usage}
