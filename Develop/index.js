@@ -10,7 +10,7 @@ inquirer.prompt([
     {
         type: 'input',
         name: 'Description',
-        message: 'Description: '
+        message: 'Please write a short description'
     },
     {
         type: 'input',
@@ -20,7 +20,7 @@ inquirer.prompt([
     {
         type: 'input',
         name: 'Installation',
-        message: 'Installation: '
+        message: 'What type of Installation is this?'
     },
     {
         type: 'input',
@@ -53,13 +53,13 @@ inquirer.prompt([
     console.log('', answer);
 
     let badgeUrl = ''
-    if (answer.sixth === "Creative Commons") {
+    if (answer.License === "Creative Commons") {
         badgeUrl = '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)'
-    } else if (answer.sixth === "Eclipse") {
+    } else if (answer.License === "Eclipse") {
         badgeUrl = '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
-    } else if (answer.sixth === "IBM") {
+    } else if (answer.License === "IBM") {
         badgeUrl = '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)'
-    } else if (answer.sixth === "Mozilla") {
+    } else if (answer.License === "Mozilla") {
         badgeUrl = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
     }
 
