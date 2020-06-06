@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-inquirer.prompt([{
+inquirer.prompt([
+    {
         type: 'input',
         name: 'title',
         message: 'Project Name: '
@@ -24,28 +25,28 @@ inquirer.prompt([{
     {
         type: 'input',
         name: 'Usage',
-        message: 'Usage: '
+        message: 'Usage:'
     },
     {
         type: 'list',
         name: 'License',
         message: 'License: ',
-        choices: ["Creative Commons", "Eclipse", "IBM", "Mozilla", ]
+        choices: ["Creative Commons", "Eclipse", "IBM", "Mozilla"]
     },
     {
         type: 'input',
         name: 'Contributing',
-        message: 'Contributing: '
+        message: 'Contributing:'
     },
     {
         type: 'input',
         name: 'Tests',
-        message: 'Tests: '
+        message: 'Tests:'
     },
     {
         type: 'input',
         name: 'Questions',
-        message: 'Questions: '
+        message: 'Questions:'
     }
 ])
 
@@ -64,18 +65,18 @@ inquirer.prompt([{
     }
 
     const readMeString = `
-    # Title: ${answer.Title}
-    # Description: ${answer.Description}
-    Table of Contents: ${answer.Contents}
-    Installation: ${answer.Installation}
-    Usage: ${answer.Usage}
-    ${badgeUrl}
-    Contributing: ${answer.Contributing}
-    Tests: ${answer.Tests}
-    Questions: ${answer.Questions}
+# Title: ${answer.Title}
+Description: ${answer.Description}
+Table of Contents: ${answer.Contents}
+Installation: ${answer.Installation}
+Usage: ${answer.Usage}
+Contributing: ${answer.Contributing}
+Tests: ${answer.Tests}
+Questions: ${answer.Questions}
+${badgeUrl}
     `
 
-    fs.writeFile('README.md', readMeString, function(err) {
+    fs.writeFile('README.md', readMeString, function (err) {
         if (err) throw err;
         console.log('Saved!');
     });
