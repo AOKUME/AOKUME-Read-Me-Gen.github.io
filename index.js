@@ -9,43 +9,43 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'Description',
+        name: 'description',
         message: 'Please write a short description'
     },
     {
         type: 'input',
-        name: 'Contents',
+        name: 'contents',
         message: 'Table of Contents: '
     },
     {
         type: 'input',
-        name: 'Installation',
+        name: 'installation',
         message: 'What type of Installation is this?'
     },
     {
         type: 'input',
-        name: 'Usage',
+        name: 'usage',
         message: 'Usage:'
     },
     {
         type: 'list',
-        name: 'License',
-        message: 'License: ',
+        name: 'license',
+        message: 'License Type: ',
         choices: ["Creative Commons", "Eclipse", "IBM", "Mozilla"]
     },
     {
         type: 'input',
-        name: 'Contributing',
+        name: 'contributing',
         message: 'Contributing:'
     },
     {
         type: 'input',
-        name: 'Tests',
+        name: 'tests',
         message: 'Tests:'
     },
     {
         type: 'input',
-        name: 'Questions',
+        name: 'questions',
         message: 'Questions:'
     }
 ])
@@ -54,25 +54,25 @@ inquirer.prompt([
     console.log('', answer);
 
     let badgeUrl = ''
-    if (answer.License === "Creative Commons") {
+    if (answer.license === "Creative Commons") {
         badgeUrl = '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)'
-    } else if (answer.License === "Eclipse") {
+    } else if (answer.license === "Eclipse") {
         badgeUrl = '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
-    } else if (answer.License === "IBM") {
+    } else if (answer.license === "IBM") {
         badgeUrl = '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)'
-    } else (answer.License === "Mozilla") {
+    } else if (answer.license === "Mozilla") {
         badgeUrl = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
     }
 
     const readMeString = `
-# Title: ${answer.Title}
-Description: ${answer.Description}
-Table of Contents: ${answer.Contents}
-Installation: ${answer.Installation}
-Usage: ${answer.Usage}
-Contributing: ${answer.Contributing}
-Tests: ${answer.Tests}
-Questions: ${answer.Questions}
+# Title: ${answer.title}
+# Description: ${answer.description}
+# Table of Contents: ${answer.contents}
+# Installation: ${answer.installation}
+# Usage: ${answer.Usage}
+# Contributing: ${answer.contributing}
+# Tests: ${answer.tests}
+# Questions: ${answer.questions}
 ${badgeUrl}
     `
 
