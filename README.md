@@ -1,19 +1,20 @@
 
 # Title
-Read Me Generator
+README.GEN
 ## Description
-ReadMe Gen App
+App that generates ReadMe Files
 ## Table of Contents
 none
 ## Installation
-none required
+none
 ## Usage
-personal
+Personal / Homework
+## License
+[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
 ## Contributing
 John.S
 ## Tests
-this is a test
+This is a Test.
 ## Questions
-this is a question?
-[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+This is a Question?
     

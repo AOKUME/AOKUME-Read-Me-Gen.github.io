@@ -75,13 +75,14 @@ ${answer.contents}
 ${answer.installation}
 ## Usage
 ${answer.usage}
+## License
+${badgeUrl}
 ## Contributing
 ${answer.contributing}
 ## Tests
 ${answer.tests}
 ## Questions
 ${answer.questions}
-${badgeUrl}
     `
 
     fs.writeFile('README.md', readMeString, function (err) {
