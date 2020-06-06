@@ -1,8 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-inquirer.prompt([
-    {
+inquirer.prompt([{
         type: 'input',
         name: 'title',
         message: 'Project Name: '
@@ -31,7 +30,7 @@ inquirer.prompt([
         type: 'list',
         name: 'License',
         message: 'License: ',
-        choices: ["Creative Commons","Eclipse","IBM","Mozilla",]
+        choices: ["Creative Commons", "Eclipse", "IBM", "Mozilla", ]
     },
     {
         type: 'input',
@@ -49,6 +48,7 @@ inquirer.prompt([
         message: 'Questions: '
     }
 ])
+
 .then(function(answer) {
     console.log('', answer);
 
@@ -74,8 +74,10 @@ inquirer.prompt([
     Tests: ${answer.Tests}
     Questions: ${answer.Questions}
     `
-    fs.writeFile('README.md', readMeString, function (err) {
+
+    fs.writeFile('README.md', readMeString, function(err) {
         if (err) throw err;
         console.log('Saved!');
-      });
-})
+    });
+
+});
