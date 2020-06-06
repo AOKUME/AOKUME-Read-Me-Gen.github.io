@@ -4,8 +4,8 @@
     Table of Contents: 1
     Installation: 1
     Usage: 1
-    [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+    [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
     Contributing: 1
-    Tests: 1
+    Tests: 
     Questions: 1
     
