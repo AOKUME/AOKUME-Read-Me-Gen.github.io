@@ -65,14 +65,22 @@ inquirer.prompt([
     }
 
     const readMeString = `
-# Title: ${answer.title}
-# Description: ${answer.description}
-# Table of Contents: ${answer.contents}
-# Installation: ${answer.installation}
-# Usage: ${answer.Usage}
-# Contributing: ${answer.contributing}
-# Tests: ${answer.tests}
-# Questions: ${answer.questions}
+# Title
+${answer.title}
+## Description
+${answer.description}
+## Table of Contents
+${answer.contents}
+## Installation
+${answer.installation}
+## Usage
+${answer.usage}
+## Contributing
+${answer.contributing}
+## Tests
+${answer.tests}
+## Questions
+${answer.questions}
 ${badgeUrl}
     `
 
