@@ -1,65 +1,78 @@
-var inquirer = require('inquirer');
-var fs = require('fs');
+const inquirer = require('inquirer');
+const fs = require('fs');
+
 inquirer.prompt([
     {
         type: 'input',
-        name: 'first',
+        name: 'title',
         message: 'Project Name: '
     },
     {
         type: 'input',
-        name: 'second',
+        name: 'Description',
         message: 'Description: '
     },
     {
         type: 'input',
-        name: 'third',
+        name: 'Contents',
         message: 'Table of Contents: '
     },
     {
         type: 'input',
-        name: 'fourth',
+        name: 'Installation',
         message: 'Installation: '
     },
     {
         type: 'input',
-        name: 'fifth',
+        name: 'Usage',
         message: 'Usage: '
     },
     {
-        type: 'input',
-        name: 'sixth',
-        message: 'License: '
+        type: 'list',
+        name: 'License',
+        message: 'License: ',
+        choices: ["Creative Commons","Eclipse","IBM","Mozilla",]
     },
     {
         type: 'input',
-        name: 'seventh',
+        name: 'Contributing',
         message: 'Contributing: '
     },
     {
         type: 'input',
-        name: 'eigth',
+        name: 'Tests',
         message: 'Tests: '
     },
     {
         type: 'input',
-        name: 'ninth',
+        name: 'Questions',
         message: 'Questions: '
     }
 ])
 .then(function(answer) {
     console.log('', answer);
-    var readMeString = `
 
-    Title: ${answer.first}
-    Description: ${answer.second}
-    Table of Contents: ${answer.third}
-    Installation: ${answer.fourth}
-    Usage: ${answer.fifth}
-    License: ${answer.sixth}
-    Contributing: ${answer.seventh}
-    Tests: ${answer.eigth}
-    Questions: ${answer.ninth}
+    let badgeUrl = ''
+    if (answer.sixth === "Creative Commons") {
+        badgeUrl = '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)'
+    } else if (answer.sixth === "Eclipse") {
+        badgeUrl = '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
+    } else if (answer.sixth === "IBM") {
+        badgeUrl = '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)'
+    } else if (answer.sixth === "Mozilla") {
+        badgeUrl = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
+    }
+
+    let readMeString = `
+    Title: ${answer.Title}
+    Description: ${answer.Description}
+    Table of Contents: ${answer.Contents}
+    Installation: ${answer.Installation}
+    Usage: ${answer.Usage}
+    ${badgeUrl}
+    Contributing: ${answer.Contributing}
+    Tests: ${answer.Tests}
+    Questions: ${answer.Questions}
     `
     fs.writeFile('README.md', readMeString, function (err) {
         if (err) throw err;
